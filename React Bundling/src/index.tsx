@@ -1,18 +1,15 @@
 import { React, ReactDOM } from "https://unpkg.com/es-react@16.8.60/index.js";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      div: any;
-    }
-  }
-}
-
 function Deno(props: any): any {
+  const [counter, setCounter] = React.useState(1);
+
   return (
-    <div>
-      Hello Deno 🦕
-    </div>
+    <>
+      <h1>Hello Deno 🦕 </h1>
+      <p>React with deno: {counter}</p>
+      <button onClick={() => setCounter(counter + 1)}>+ Increment</button>&nbsp; &nbsp;
+      <button onClick={() => setCounter(counter - 1)}>- Decrement</button>
+    </>
   );
 }
 
